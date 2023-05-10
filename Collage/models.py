@@ -36,10 +36,16 @@ class Course(models.Model):
     def __unicode__(self):
         return self.code + " " + self.name
 class CourseInstance(models.Model):
+    semesters = [
+        ('Fall', 'Fall'),
+        ('Spring', 'Spring'),
+        ('Summer', 'Summer'),
+        ('Winter', 'Winter')
+    ]
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     department = models.ForeignKey(department, on_delete=models.CASCADE)
-    semester = models.CharField(max_length=100)
+    semester = models.CharField(max_length=100, choices=semesters)
     year = models.IntegerField()
 
     def __unicode__(self):
