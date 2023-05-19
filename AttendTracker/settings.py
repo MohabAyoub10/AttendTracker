@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-6gi8ttsxv6x+)0(f$7h*u-)oh@d*3khw(&+%u^7_k9yq-3j35^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL = True
+CSRF_TRUSTED_ORIGINS = ['https://attendtracker-production.up.railway.app/']
 
 
 # Application definition
